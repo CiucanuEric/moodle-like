@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/LecturesService/gRPCInterfaceMongo/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/DatabaseBrokerService/gRPCInterfaceMySQL/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
     <annotationProcessing>
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="DatabaseBrokerService" />
+        <module name="gRPCInterfaceMongo" />
+        <module name="gRPCInterfaceMySQL" />
         <module name="LecturesService" />
+        <module name="DatabaseBrokerService" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

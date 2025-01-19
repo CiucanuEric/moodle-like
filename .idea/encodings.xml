@@ -6,7 +6,10 @@
     <file url="file://$PROJECT_DIR$/DatabaseBrokerService/src/main/kotlin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ExDatabaseBrokerService/src/main/kotlin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ExDatabaseBrokerService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LecturesService/gRPCInterfaceMongo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LecturesService/gRPCInterfaceMongo/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LecturesService/src/main/kotlin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo/src/main/kotlin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gRPCInterface/src/main/kotlin" charset="UTF-8" />
   </component>
 </project>

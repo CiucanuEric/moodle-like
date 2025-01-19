@@ -7,16 +7,69 @@ services:
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
-
-  mongo-express:
-    image: mongo-express
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    ports:
+      - "27017:27017"
+  spring-mongo:
+    build:
+      context: LecturesService
+      dockerfile: Dockerfile
+    ports:
+      - "15000:15000"
+    depends_on:
+      - mongo
+  spring-mariadb:
+    build:
+      context: DatabaseBrokerService
+      dockerfile: Dockerfile
+    ports:
+      - "16000:16000"
+    depends_on:
+      - mariadb
+  mariadb:
+    image: mariadb:latest
     restart: always
     ports:
-      - 8081:8081
+      - "3306:3306"
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
-      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
-      ME_CONFIG_BASICAUTH: false
+      MARIADB_ROOT_PASSWORD: admin
+      MARIADB_DATABASE: authdb
+      MARIADB_USER: myuser
+      MARIADB_PASSWORD: mypassword
+    volumes:
+      - mariadb_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
+  auth-service:
+      build:
+        context: AuthService
+        dockerfile: Dockerfile
+      ports:
+        - "50051:50051"
+      environment:
+        DB_HOST: mariadb
+        DB_PORT: 3306
+        DB_USER: root
+        DB_PASSWORD: admin
+        DB_NAME: authdb
+      depends_on:
+        - mariadb
+      restart: always
+  proxy:
+    image: envoyproxy/envoy:v1.33.0
+    network_mode: host
+    volumes:
+      - ./envoy.yaml:/etc/envoy/envoy.yaml
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
+    stdin_open: true
+    tty: true
+volumes:
+  mariadb_data:

@@ -2,9 +2,19 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="sonatype-nexus-snapshots" />
+      <option name="name" value="Sonatype Nexus Snapshots" />
+      <option name="url" value="https://oss.sonatype.org/content/repositories/snapshots" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="central" />
       <option name="name" value="Central Repository" />
       <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="bintray.kotlin.eap" />
+      <option name="name" value="Bintray Kotlin EAP Repository" />
+      <option name="url" value="https://dl.bintray.com/kotlin/kotlin-eap" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="central" />
@@ -15,6 +25,16 @@
       <option name="id" value="jboss.community" />
       <option name="name" value="JBoss Community repository" />
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="kotlin-ktor" />
+      <option name="name" value="kotlin-ktor" />
+      <option name="url" value="https://dl.bintray.com/kotlin/ktor/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jcenter" />
+      <option name="name" value="jcenter" />
+      <option name="url" value="https://jcenter.bintray.com" />
     </remote-repository>
   </component>
 </project>

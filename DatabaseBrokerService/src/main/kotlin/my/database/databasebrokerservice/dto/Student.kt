@@ -11,12 +11,12 @@ import lombok.Setter
 @Table(name = "students")
 @Getter
 @Setter
-data class Student(
+class Student(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    val id:Int,
+    val id:Long,
     @Basic
     @Column(name = "nume")
     val nume:String,
@@ -35,12 +35,12 @@ data class Student(
     @Basic
     @Column(name="grupa")
     val grupa:String,
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name="studenti_discipline",
         joinColumns = [JoinColumn(name = "id_student")],
         inverseJoinColumns = [JoinColumn(name = "id_disciplina")]
     )
     @JsonIgnoreProperties("assignedStudents","assignedProfessors")
-    val assignedLectures: List<Lecture> = mutableListOf(),
+    val assignedLectures: List<Lecture>,
 )

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AuthService/AuthService.iml" filepath="$PROJECT_DIR$/AuthService/AuthService.iml" />
       <module fileurl="file://$PROJECT_DIR$/POS_Project.iml" filepath="$PROJECT_DIR$/POS_Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/frontend.iml" filepath="$PROJECT_DIR$/frontend.iml" />
     </modules>
   </component>
 </project>

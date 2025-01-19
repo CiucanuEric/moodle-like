@@ -12,7 +12,7 @@ import lombok.Setter
 @Table(name = "profesori")
 @Getter
 @Setter
-data class Professor(
+class Professor(
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name="id")
@@ -41,7 +41,7 @@ data class Professor(
     @Basic
     @Column(name="afiliere")
     val afiliere: String = "",
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name="profesori_discipline",
         joinColumns = [JoinColumn(name = "id_professor")],
