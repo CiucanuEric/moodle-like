@@ -1,0 +1,50 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@grpc/grpc-js": "^1.12.5",
+    "@grpc/proto-loader": "^0.7.13",
+    "@protobuf-ts/plugin": "^2.9.4",
+    "axios": "^1.7.9",
+    "browserify-zlib": "^0.2.0",
+    "cra-template": "1.2.0",
+    "google-protobuf": "^3.21.4",
+    "grpc-web": "^1.5.0",
+    "minimist": "^1.2.8",
+    "os-browserify": "^0.3.0",
+    "protoc": "^1.1.3",
+    "protoc-gen-grpc-web": "^1.5.0",
+    "query-string": "^9.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.1.2",
+    "react-scripts": "5.0.1",
+    "util": "^0.12.5",
+    "web-vitals": "^4.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
